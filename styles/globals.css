@@ -1,8 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Custom global styles */
-body {
-  @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-white font-sans;
+@layer base {
+  * {
+    @apply border-gray-200 dark:border-gray-700;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-slate-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 font-sans antialiased;
+    background-attachment: fixed;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass morphism effect */
+  .glass {
+    @apply backdrop-blur-md bg-white/80 dark:bg-gray-900/80 border border-white/20 dark:border-gray-700/50;
+  }
+
+  /* Button variants */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold py-2 px-4 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary-100 to-secondary-200 hover:from-secondary-200 hover:to-secondary-300 dark:from-secondary-800 dark:to-secondary-700 dark:hover:from-secondary-700 dark:hover:to-secondary-600 text-secondary-900 dark:text-secondary-100 font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 font-semibold py-2 px-4 rounded-lg border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-200;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl shadow-soft hover:shadow-xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply card hover:transform hover:scale-[1.02] hover:-translate-y-1;
+  }
+
+  /* Input styles */
+  .input {
+    @apply w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-400 dark:focus:border-primary-400 transition-all duration-200 placeholder-gray-500 dark:placeholder-gray-400;
+  }
+
+  /* Tag styles */
+  .tag {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-primary-100 to-primary-200 dark:from-primary-800 dark:to-primary-700 text-primary-800 dark:text-primary-100 hover:from-primary-200 hover:to-primary-300 dark:hover:from-primary-700 dark:hover:to-primary-600 transition-all duration-200 cursor-pointer;
+  }
+
+  /* Loading spinner */
+  .spinner {
+    @apply inline-block w-6 h-6 border-2 border-gray-300 border-t-primary-600 rounded-full animate-spin;
+  }
+
+  /* Code block styling */
+  .code-block {
+    @apply bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-gray-700;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  /* Hero section */
+  .hero-bg {
+    background-image: 
+      linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%),
+      url('https://images.unsplash.com/photo-1607799279861-4dd421887fb3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHx8fDE3NTIzMTYwNjV8MA&ixlib=rb-4.1.0&q=85');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Text shadow utilities */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
 }

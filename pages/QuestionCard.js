@@ -1,11 +1,19 @@
-export default function QuestionCard({ title, description, tags, username, answerCount }) {
+export default function QuestionCard({
+  title,
+  description,
+  tags,
+  username,
+  answerCount,
+}) {
   return (
     <div className="border p-4 mb-4 rounded flex justify-between">
       <div>
         <h2 className="font-bold text-lg mb-1">{title}</h2>
         <div className="mb-2 flex space-x-2">
           {tags.map((tag, index) => (
-            <span key={index} className="bg-gray-200 px-2 py-1 rounded text-xs">{tag}</span>
+            <span key={index} className="bg-gray-200 px-2 py-1 rounded text-xs">
+              {tag}
+            </span>
           ))}
         </div>
         <p className="text-sm text-gray-700 mb-2">{description}</p>

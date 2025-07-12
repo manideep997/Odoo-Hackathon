@@ -1,193 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>StackIt - Ask Question</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: url('express.png') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    
-    .container {
-      background-color: #222;
-      padding: 30px 40px;
-      border-radius: 15px;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-      animation: fadeInScale 1.5s ease-in-out;
-    }
-
-    @keyframes fadeInScale {
-      0% {
-        opacity: 0;
-        transform: scale(0.9);
+  <head>
+    <meta charset="UTF-8" />
+    <title>StackIt - Ask Question</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
-      100% {
-        opacity: 1;
-        transform: scale(1);
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: url("express.png") no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-    }
 
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 25px;
-    }
-
-    .header h2 {
-      font-size: 26px;
-    }
-
-    .header nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-    }
-
-    .profile {
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      
-      background-size: cover;
-      background-position: center;
-    }
-
-    label {
-      display: flex;
-      align-items: center;
-      margin: 15px 0 5px;
-      font-weight: bold;
-    }
-
-    label img {
-      width: 20px;
-      margin-right: 10px;
-    }
-
-    input[type="text"], textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #555;
-      background-color: #111;
-      color: white;
-      border-radius: 8px;
-      resize: vertical;
-      transition: 0.3s;
-    }
-
-    input[type="text"]:focus, textarea:focus {
-      border-color: yellow;
-      outline: none;
-    }
-
-    /* === TOOLBAR === */
-    .rich-toolbar {
-      display: flex;
-      gap: 10px;
-      background-color: #222;
-      padding: 6px 10px;
-      margin-bottom: 10px;
-      border-radius: 5px;
-    }
-
-    .rich-toolbar button {
-      background-color: #637e4c;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: 0.2s;
-    }
-
-    .rich-toolbar button:hover {
-      background-color: #e74c3c;
-    }
-
-    .submit-btn {
-      background-color: #c0392b;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      margin-top: 25px;
-      font-weight: bold;
-      cursor: pointer;
-      width: 100%;
-      transition: 0.3s ease;
-    }
-
-    .submit-btn:hover {
-      background-color: #e74c3c;
-    }
-
-    @media (max-width: 600px) {
       .container {
-        padding: 25px;
+        background-color: #222;
+        padding: 30px 40px;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 500px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        animation: fadeInScale 1.5s ease-in-out;
+      }
+
+      @keyframes fadeInScale {
+        0% {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
       }
 
       .header h2 {
-        font-size: 22px;
+        font-size: 26px;
       }
-    }
-  </style>
-</head>
-<body>
 
-  <div class="container">
-    <div class="header">
-      <h2>StackIt</h2>
-      <nav>
-        <a href="#">Home</a>
-        <div class="profile"></div>
-      </nav>
-    </div>
+      .header nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: bold;
+      }
 
-    <form>
-      <label for="title">
-        <img src="https://cdn-icons-png.flaticon.com/512/2889/2889676.png" alt="title icon"> Title
-      </label>
-      <input type="text" id="title" name="title" placeholder="Enter your question title">
+      .profile {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
 
-      <label for="description">
-        <img src="https://cdn-icons-png.flaticon.com/512/1250/1250620.png" alt="desc icon"> Description
-      </label>
-      <div class="rich-toolbar">
-        <button type="button"><b>B</b></button>
-        <button type="button"><i>I</i></button>
-        <button type="button"><u>U</u></button>
-        <button type="button">• List</button>
-        <button type="button">1. List</button>
-        <button type="button">{ }</button>
+        background-size: cover;
+        background-position: center;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        margin: 15px 0 5px;
+        font-weight: bold;
+      }
+
+      label img {
+        width: 20px;
+        margin-right: 10px;
+      }
+
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #555;
+        background-color: #111;
+        color: white;
+        border-radius: 8px;
+        resize: vertical;
+        transition: 0.3s;
+      }
+
+      input[type="text"]:focus,
+      textarea:focus {
+        border-color: yellow;
+        outline: none;
+      }
+
+      /* === TOOLBAR === */
+      .rich-toolbar {
+        display: flex;
+        gap: 10px;
+        background-color: #222;
+        padding: 6px 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+
+      .rich-toolbar button {
+        background-color: #637e4c;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: 0.2s;
+      }
+
+      .rich-toolbar button:hover {
+        background-color: #e74c3c;
+      }
+
+      .submit-btn {
+        background-color: #c0392b;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        margin-top: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background-color: #e74c3c;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 25px;
+        }
+
+        .header h2 {
+          font-size: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>StackIt</h2>
+        <nav>
+          <a href="#">Home</a>
+          <div class="profile"></div>
+        </nav>
       </div>
-      <textarea id="description" name="description" rows="6" placeholder="Explain your question..."></textarea>
 
-      <label for="tags">
-        <img src="https://cdn-icons-png.flaticon.com/512/2230/2230646.png" alt="tag icon"> Tags
-      </label>
-      <input type="text" id="tags" name="tags" placeholder="e.g., javascript, html, css">
+      <form>
+        <label for="title">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2889/2889676.png"
+            alt="title icon"
+          />
+          Title
+        </label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Enter your question title"
+        />
 
-      <button type="submit" class="submit-btn">Submit</button>
-    </form>
-  </div>
+        <label for="description">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1250/1250620.png"
+            alt="desc icon"
+          />
+          Description
+        </label>
+        <div class="rich-toolbar">
+          <button type="button"><b>B</b></button>
+          <button type="button"><i>I</i></button>
+          <button type="button"><u>U</u></button>
+          <button type="button">• List</button>
+          <button type="button">1. List</button>
+          <button type="button">{ }</button>
+        </div>
+        <textarea
+          id="description"
+          name="description"
+          rows="6"
+          placeholder="Explain your question..."
+        ></textarea>
 
-</body>
+        <label for="tags">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2230/2230646.png"
+            alt="tag icon"
+          />
+          Tags
+        </label>
+        <input
+          type="text"
+          id="tags"
+          name="tags"
+          placeholder="e.g., javascript, html, css"
+        />
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </body>
 </html>
